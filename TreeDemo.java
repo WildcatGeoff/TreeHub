@@ -107,6 +107,22 @@ class BinarySearchTree{
    */
    public int getMin(Node root){
       //implement me
+	  int min = Integer.MAX_VALUE;
+	  if(root.value < min)
+	  {
+		  min = root.value;
+	  }
+	  int leftMin = getMin(root.left);
+	  int rightMin = getMin(root.right);
+	  if(leftMin < min)
+	  {
+		  min = leftMin;
+	  }
+	  if(rightMin < min)
+	  {
+		  min = rightMin;
+	  }
+	  return min;
    }
   
   
