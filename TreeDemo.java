@@ -134,7 +134,22 @@ class BinarySearchTree{
    public int getMax(Node root){
 	  //implement me
    }
-   
+    int max = Integer.MIN_VALUE;
+	  if(root.value > max)
+	  {
+		  max = root.value;
+	  }
+	  int leftMax = getMin(root.left);
+	  int rightMax = getMin(root.right);
+	  if(leftMax > max)
+	  {
+		  max = leftMax;
+	  }
+	  if(rightMax > max)
+	  {
+		  max = rightMax;
+	  }
+	  return max;
    
    
    /*
